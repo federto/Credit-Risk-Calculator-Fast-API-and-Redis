@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Credit Risk Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+    <div class="p-5 text-center bg-light mb-3">
+      <h1 class="mb-3">Credit Risk Calculator</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+              <form action="/credit-risk" method="post">
+                <p> Type of Product <select required="required" class="form-select form-select-sm" aria-label=".form-select-sm example" name="product" id="product">
+                  <option selected="selected" disabled value="">Select Type of Credit</option>
+                  <option value="1">Personal Credit</option>
+                  <option value="2">Mortgage Credit</option>
+                  <option value="7">Pledge Credit</option>
+                </select> <div class="invalid-feedback">
+                  Please select a valid type of product.
+                </div> </p>
+                <p> Age <select select required="required" class="form-select form-select-sm" aria-label=".form-select-sm example" name="age" id="age">
+                  <option selected="selected" disabled value="">Select Age</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">23</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                  <option value="32">32</option>
+                  <option value="33">33</option>
+                  <option value="34">34</option>
+                  <option value="35">35</option>
+                  <option value="36">36</option>
+                  <option value="37">37</option>
+                  <option value="38">38</option>
+                  <option value="39">39</option>
+                  <option value="40">40</option>
+                  <option value="41">41</option>
+                  <option value="42">42</option>
+                  <option value="43">43</option>
+                  <option value="44">44</option>
+                  <option value="45">45</option>
+                  <option value="46">46</option>
+                  <option value="47">47</option>
+                  <option value="48">48</option>
+                  <option value="49">49</option>
+                  <option value="50">50</option>
+                  <option value="51">51</option>
+                  <option value="52">52</option>
+                  <option value="53">53</option>
+                  <option value="54">54</option>
+                  <option value="55">55</option>
+                  <option value="56">56</option>
+                  <option value="57">57</option>
+                  <option value="58">58</option>
+                  <option value="59">59</option>
+                  <option value="60">60</option>
+                  <option value="61">61</option>
+                  <option value="62">62</option>
+                  <option value="63">63</option>
+                  <option value="64">64</option>
+                  <option value="65">65</option>
+                </select> <div class="invalid-feedback">
+                  Please select a valid Age.
+                </div> </p>
+                <p> Payment Day <select select required="required" class="form-select form-select-sm" aria-label=".form-select-sm example" name="payment_day" id="payment_day">
+                  <option selected="selected" disabled value="">Select Payment Day</option>
+                  <option value=0>0</option>
+                  <option value=5>5</option>
+                  <option value=10>10</option>
+                  <option value=15>15</option>
+                  <option value=20>20</option>
+                  <option value=25>25</option>
+                </select> <div class="invalid-feedback">
+                  Please select a valid Payment Day.
+                </div> </p>
+                <p> Application Submission Type <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="application_submission_type" id="application_submission_type">
+                  <option value="Web">Web</option>
+                </select></p>
+                <p> Postal adress is the Home adress?: <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="postal_adress_type" id="postal_adress_type">
+                  <option selected="1">Yes</option>
+                  <option value="2">No</option>
+                </select></p>
+                <p> Sex <select select required="required" class="form-select form-select-sm" aria-label=".form-select-sm example" name="sex" id="sex">
+                  <option selected="selected" disabled value="">Select Sex</option>
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                  <option value="NB">Non Binary</option>
+                </select> <div class="invalid-feedback">
+                  Please select a valid Sex.
+                </div> </p>
+                <p> Marital Status <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="marital_status" id="marital_status">
+                  <option selected="1">Single</option>
+                  <option value="2">Married</option>
+                  <option value="3">Separeted</option>
+                  <option value="4">Divorced</option>
+                  <option value="5">Widowed</option>
+                  <option value="6">Registered Partnership</option>
+                </select></p>
+                <p> Quantity of Dependants <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="quant_dependants" id="quant_dependants">
+                  <option selected="0">0</option>
+                  <option value=1>1</option>
+                  <option value=2>2</option>
+                </select></p>
+                <p> State Of Birth? <select required="required" class="form-select form-select-sm" aria-label=".form-select-sm example" name="state_of_birth" id="state_of_birth">
+                  <option selected="selected" disabled value="">Select State Of Birth</option>
+                  <option value="0">Brazilian</option>
+                  <option value="1">Not Brazilian</option>
+                </select> <div class="invalid-feedback">
+                  Please select a valid state.
+                </div> </p>
+                <p> City Of Birth <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="city_of_birth" id="city_of_birth">
+                  <option selected>OTHER</option>
+                  <option value="RIO DE JANEIRO">RIO DE JANEIRO</option>
+                  <option value="RECIFE">RECIFE</option>
+                  <option value="SAO PAULO">SAO PAULO</option>
+                  <option value="FORTALEZA">FORTALEZA</option>
+                  <option value="PELOTAS">PELOTAS</option>
+                  <option value="SALVADOR">SALVADOR</option>
+                  <option value="PORTO ALEGRE">PORTO ALEGRE</option>
+                  <option value="NATAL">NATAL</option>
+                  <option value="MACEIO">MACEIO</option>
+                  <option value="QUIXADA">QUIXADA</option>
+                  <option value="QUIXADA">QUIXADA</option>
+                  <option value="RIO GRANDE">RIO GRANDE</option>
+                  <option value="CUIABA">CUIABA</option>
+                  <option value="BELO HORIZONTE">BELO HORIZONTE</option>
+                  <option value="CAMPINA GRANDE">CAMPINA GRANDE</option>
+                  <option value="ITABUNA">ITABUNA</option>
+                  <option value="BRASILIA">BRASILIA</option>
+                  <option value="MOSSORO">MOSSORO</option>
+                  <option value="JOAO PESSOA">JOAO PESSOA</option>
+                  <option value="MORADA NOVA">MORADA NOVA</option>
+                  <option value="JEQUIE">JEQUIE</option>
+                  <option value="PACAJUS">PACAJUS</option>
+                  <option value="GOIANIA">GOIANIA</option>
+                  <option value="ILHEUS">ILHEUS</option>
+                  <option value="OSASCO">OSASCO</option>
+                  <option value="BRASILEIRA">BRASILEIRA</option>
+                  <option value="MACAPA">MACAPA</option>
+                  <option value="VITORIA DA CONQUISTA">VITORIA DA CONQUISTA</option>
+                  <option value="PAULO AFONSO">PAULO AFONSO</option>
+                  <option value="SOBRAL">SOBRAL</option>
+                  <option value="GUARULHOS">GUARULHOS</option>
+                  <option value="FEIRA DE SANTANA">FEIRA DE SANTANA</option>
+                  <option value="SAO LUIS">SAO LUIS</option>
+                  <option value="MANAUS">MANAUS</option>
+                  <option value="CURITIBA">CURITIBA</option>
+                  <option value="CANGUCU">CANGUCU</option>
+                  <option value="CARPINA">CARPINA</option>
+                </select></p>
+                <p> Nacionality <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="nacionality" id="nacionality">
+                  <option selected="1">Brazilian</option>
+                  <option value=0>Latin American</option>
+                  <option value=2>Other</option>
+                </select></p>
+                <p> Residential State <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="residencial_state" id="residencial_state">
+                  <option selected>SP</option>
+                  <option value="SP">SP</option>
+                  <option value="RS">RS</option>
+                  <option value="BA">BA</option>
+                  <option value="CE">CE</option>
+                  <option value="PE">PE</option>
+                  <option value="MG">MG</option>
+                  <option value="PA">PA</option>
+                  <option value="RJ">RJ</option>
+                  <option value="RN">RN</option>
+                  <option value="GO">GO</option>
+                  <option value="PR">PR</option>
+                  <option value="AL">AL</option>
+                  <option value="PB">PB</option>
+                  <option value="MT">MT</option>
+                  <option value="MA">MA</option>
+                  <option value="DF">DF</option>
+                  <option value="MS">MS</option>
+                  <option value="ES">ES</option>
+                  <option value="SC">SC</option>
+                  <option value="AP">AP</option>
+                  <option value="AM">AM</option>
+                  <option value="PI">PI</option>
+                  <option value="RO">RO</option>
+                  <option value="SE">SE</option>
+                  <option value="AC">AC</option>
+                  <option value="TO">TO</option>
+                  <option value="RR">RR</option>
+                </select></p>
+                <p> Residential City <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="residencial_city" id="residencial_city">
+                  <option selected>RIO DE JANEIRO</option>
+                  <option value="ANANINDEUA">ANANINDEUA</option>
+                  <option value="BARUERI">BARUERI</option>
+                  <option value="BELEM">BELEM</option>
+                  <option value="BELO HORIZONTE">BELO HORIZONTE</option>
+                  <option value="CAMPINA GRANDE">CAMPINA GRANDE</option>
+                  <option value="CAMPO GRANDE">CAMPO GRANDE</option>
+                  <option value="CONTAGEM">CONTAGEM</option>
+                  <option value="CUIABA">CUIABA</option>
+                  <option value="CURITIBA">CURITIBA</option>
+                  <option value="FORTALEZA">FORTALEZA</option>
+                  <option value="GOIANIA">GOIANIA</option>
+                  <option value="GUARULHOS">GUARULHOS</option>
+                  <option value="ITABUNA">ITABUNA</option>
+                  <option value="JABOATAO DOS GUARARAPES">JABOATAO DOS GUARARAPES</option>
+                  <option value="JOAO PESSOA">JOAO PESSOA</option>
+                  <option value="MACAPA">MACAPA</option>
+                  <option value="MACEIO">MACEIO</option>
+                  <option value="MANAUS">MANAUS</option>
+                  <option value="MARACANAU">MARACANAU</option>
+                  <option value="MOSSORO">MOSSORO</option>
+                  <option value="NATAL">NATAL</option>
+                  <option value="NOVO HAMBURGO">NOVO HAMBURGO</option>
+                  <option value="OSASCO">OSASCO</option>
+                  <option value="OTHER">OTHER</option>
+                  <option value="PACAJUS">PACAJUS</option>
+                  <option value="PARNAMIRIM">PARNAMIRIM</option>
+                  <option value="PAULO AFONSO">PAULO AFONSO</option>
+                  <option value="PELOTAS">PELOTAS</option>
+                  <option value="PORTO ALEGRE">PORTO ALEGRE</option>
+                  <option value="QUIXADA">QUIXADA</option>
+                  <option value="RECIFE">RECIFE</option>
+                  <option value="RIO DE JANEIRO">RIO DE JANEIRO</option>
+                  <option value="RIO GRANDE">RIO GRANDE</option>
+                  <option value="SALVADOR">SALVADOR</option>
+                  <option value="SANTA ISABEL">SANTA ISABEL</option>
+                  <option value="SAO PAULO">SAO PAULO</option>
+                  <option value="TUCURUI">TUCURUI</option>
+                  <option value="UBERLANDIA">UBERLANDIA</option>
+                  <option value="VARZEA GRANDE">VARZEA GRANDE</option>
+                  <option value="VIAMAO">VARZEA GRANDE</option>
+                </select></p>
+                <p> Residential Borough <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="residencial_borough" id="residencial_borough">
+                  <option selected>AREAL</option>
+                  <option value="APARECIDA">APARECIDA</option>
+                  <option value="AREAL">AREAL</option>
+                  <option value="AREIAS">AREIAS</option>
+                  <option value="BANGU">BANGU</option>
+                  <option value="BELA VISTA">BELA VISTA</option>
+                  <option value="BOA ESPERANCA">BOA ESPERANCA</option>
+                  <option value="BOA VISTA">BOA VISTA</option>
+                  <option value="BOM JARDIM">BOM JARDIM</option>
+                  <option value="CAMPO GRANDE">CAMPO GRANDE</option>
+                  <option value="CANUDOS">CANUDOS</option>
+                  <option value="CEILANDIA NORTE">CEILANDIA NORTE</option>
+                  <option value="CENTRO">CENTRO</option>
+                  <option value="CIDADE NOVA">CIDADE NOVA</option>
+                  <option value="COHAB">COHAB</option>
+                  <option value="COQUEIRO">COQUEIRO</option>
+                  <option value="COSMOS">COSMOS</option>
+                  <option value="CRUZEIRO">CRUZEIRO</option>
+                  <option value="FATIMA">FATIMA</option>
+                  <option value="FRAGATA">FRAGATA</option>
+                  <option value="JACINTINHO">JACINTINHO</option>
+                  <option value="LAGOA AZUL">LAGOA AZUL</option>
+                  <option value="LIBERDADE">LIBERDADE</option>
+                  <option value="NOVO HORIZONTE">NOVO HORIZONTE</option>
+                  <option value="OTHER">OTHER</option>
+                  <option value="PAJUCARA">PAJUCARA</option>
+                  <option value="PLANALTO">PLANALTO</option>
+                  <option value="POTENGI">POTENGI</option>
+                  <option value="PRIMAVERA">PRIMAVERA</option>
+                  <option value="RECANTO DAS EMAS">RECANTO DAS EMAS</option>
+                  <option value="SANTA CRUZ">SANTA CRUZ</option>
+                  <option value="SANTA RITA">SANTA RITA</option>
+                  <option value="SANTO ANTONIO">SANTO ANTONIO</option>
+                  <option value="SAO CRISTOVAO">SAO CRISTOVAO</option>
+                  <option value="SAO FRANCISCO">SAO FRANCISCO</option>
+                  <option value="SAO JOAO">SAO JOAO</option>
+                  <option value="SAO JOSE">SAO JOSE</option>
+                  <option value="TANCREDO NEVES">TANCREDO NEVES</option>
+                  <option value="TRES VENDAS">TRES VENDAS</option>
+                  <option value="TRIANGULO">TRIANGULO</option>
+                  <option value="VILA NOVA">VILA NOVA</option>
+                  <option value="ZONA RURAL">ZONA RURAL</option>
+                </select></p>
+                <p> Have Residence Phone? <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="flag_residencial_phone" id="flag_residencial_phone">
+                  <option selected value="Y">Yes</option>
+                  <option value="Y">Yes</option>
+                  <option value="N">No</option>
+                </select></p>
+                <p> Residencial Phone Area Code <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="residencial_phone_area_code" id="residencial_phone_area_code">
+                  <option selected>OTHER</option>
+                  <option value=11>11</option>
+                  <option value=12>12</option>
+                  <option value=13>13</option>
+                  <option value=14>14</option>
+                  <option value=15>15</option>
+                  <option value=16>16</option>
+                  <option value=21>21</option>
+                  <option value=22>22</option>
+                  <option value=24>24</option>
+                  <option value=27>27</option>
+                  <option value=28>28</option>
+                  <option value=29>29</option>
+                  <option value=31>31</option>
+                  <option value=32>32</option>
+                  <option value=33>33</option>
+                  <option value=34>34</option>
+                  <option value=35>35</option>
+                  <option value=41>41</option>
+                  <option value=42>42</option>
+                  <option value=43>43</option>
+                  <option value=44>44</option>
+                  <option value=51>51</option>
+                  <option value=52>52</option>
+                  <option value=53>53</option>
+                  <option value=54>54</option>
+                  <option value=55>55</option>
+                  <option value=56>56</option>
+                  <option value=71>71</option>
+                  <option value=72>72</option>
+                  <option value=73>73</option>
+                  <option value=74>74</option>
+                  <option value=81>81</option>
+                  <option value=82>82</option>
+                  <option value=83>83</option>
+                  <option value=84>84</option>
+                  <option value=85>85</option>
+                  <option value=86>86</option>
+                  <option value=91>91</option>
+                  <option value=92>92</option>
+                  <option value=93>93</option>
+                  <option value=94>94</option>
+                  <option value=95>95</option>
+                  <option value=98>98</option>
+                  <option value=99>99</option>
+                </select></p>
+                <p> Residencial Zip Code <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="residencial_zip" id="residencial_zip">
+                  <option selected>OTHER</option>
+                  <option value="960">960</option>
+                  <option value="591">591</option>
+                  <option value="570">570</option>
+                  <option value="628">628</option>
+                  <option value="456">456</option>
+                  <option value="689">689</option>
+                  <option value="596">596</option>
+                  <option value="619">619</option>
+                  <option value="581">581</option>
+                  <option value="685">685</option>
+                  <option value="384">384</option>
+                  <option value="780">780</option>
+                  <option value="684">684</option>
+                  <option value="607">607</option>
+                  <option value="590">590</option>
+                  <option value="289">289</option>
+                  <option value="948">948</option>
+                  <option value="781">781</option>
+                  <option value="956">956</option>
+                  <option value="230">230</option>
+                  <option value="789">789</option>
+                  <option value="555">555</option>
+                  <option value="728">728</option>
+                  <option value="962">962</option>
+                </select></p>
+                <p> Residence Type <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="residence_type" id="residence_type">
+                  <option selected value="1">Owned</option>
+                  <option value="2">Rented</option>
+                  <option value="5">Parents</option>
+                </select></p>
+                <p> Months In Residence <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="months_in_residence" id="months_in_residence">
+                  <option selected>0</option>
+                  <option value=1>1</option>
+                  <option value=2>2</option>
+                  <option value=3>3</option>
+                  <option value=4>4</option>
+                  <option value=5>5</option>
+                  <option value=6>6</option>
+                  <option value=7>7</option>
+                  <option value=8>8</option>
+                  <option value=9>9</option>
+                  <option value=10>10</option>
+                  <option value=11>11</option>
+                  <option value=12>12</option>
+                  <option value=13>13</option>
+                  <option value=14>14</option>
+                  <option value=15>15</option>
+                  <option value=16>16</option>
+                  <option value=17>17</option>
+                  <option value=18>18</option>
+                  <option value=19>19</option>
+                  <option value=20>20</option>
+                  <option value=21>21</option>
+                  <option value=22>22</option>
+                  <option value=23>23</option>
+                  <option value=24>24</option>
+                  <option value=25>25</option>
+                  <option value=26>26</option>
+                  <option value=27>27</option>
+                  <option value=28>28</option>
+                  <option value=29>29</option>
+                  <option value=30>30</option>
+                  <option value=31>31</option>
+                  <option value=32>32</option>
+                  <option value=33>33</option>
+                  <option value=34>34</option>
+                  <option value=35>35</option>
+                  <option value=36>36</option>
+                  <option value=37>37</option>
+                  <option value=38>38</option>
+                  <option value=39>39</option>
+                  <option value=40>40</option>
+                  <option value=41>41</option>
+                  <option value=42>42</option>
+                  <option value=43>43</option>
+                  <option value=44>44</option>
+                  <option value=45>45</option>
+                  <option value=46>46</option>
+                  <option value=47>47</option>
+                  <option value=48>48</option>
+                  <option value=49>49</option>
+                  <option value=50>50</option>
+                  <option value="MORE">MORE</option>
+                </select></p>
+                <p> Monthly Income <div class="input-group mb-3">
+                  <span class="input-group-text">$</span>
+                  <input required type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="personal_monthly_income" id="personal_monthly_income">
+                  <span class="input-group-text">.00</span>
+                </div></p>
+                <p> Have Email? <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="flag_email" id="flag_email">
+                  <option selected value=1>Yes</option>
+                  <option value=1>Yes</option>
+                  <option value=0>No</option>
+                </select></p>
+                <p> Have Other Incomes? <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="other_incomes" id="other_incomes">
+                  <option selected value=0>No</option>
+                  <option value=1>Yes</option>
+                  <option value=0>No</option>
+                </select></p>
+                <p> Have Personal Assets Values? <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="personal_assets_value" id="personal_assets_value">
+                  <option selected value="0">No</option>
+                  <option value="0-25k">0-25k</option>
+                  <option value="25k-3m">25k-3m</option>
+                </select></p>
+                <p> Quantity of Cars <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="quant_cars" id="quant_cars">
+                  <option selected value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                </select></p>
+                <p> Have Mastercard? <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="mastercard" id="mastercard">
+                  <option selected value=0>No</option>
+                  <option value=1>Yes</option>
+                  <option value=0>No</option>
+                </select></p>
+                <p> Have Visa? <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="visa" id="visa">
+                  <option selected value=0>No</option>
+                  <option value=1>Yes</option>
+                  <option value=0>No</option>
+                </select></p>
+                <p> Have Diners? <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="diners" id="diners">
+                  <option selected value=0>No</option>
+                  <option value=1>Yes</option>
+                  <option value=0>No</option>
+                </select></p>
+                <p> Have American Express? <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="american_express" id="american_express">
+                  <option selected value=0>No</option>
+                  <option value=1>Yes</option>
+                  <option value=0>No</option>
+                </select></p>
+                <p> Have Other Cards? <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="others_cards" id="others_cards">
+                  <option selected value=0>No</option>
+                  <option value=1>Yes</option>
+                  <option value=0>No</option>
+                </select></p>
+                <p> Quant Banking Accounts <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="quant_banking_accounts" id="quant_banking_accounts">
+                  <option selected value=0>0</option>
+                  <option value=0>0</option>
+                  <option value=1>1</option>
+                  <option value=2>2</option>
+                </select></p>
+                <p> Profession <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="profession_code" id="profession_code">
+                  <option selected value="9">Retail Sales</option>
+                  <option value="11">Office Clerk</option>
+                  <option value="0">Registered Nurse</option>
+                  <option value="2">Janitor</option>
+                  <option value="12">Server</option>
+                  <option value="10">Teacher</option>
+                  <option value="16">Doctor</option>
+                  <option value="13">Accountant</option>
+                  <option value="7">Recepcionist</option>
+                  <option value="8">Food Preparation Worker</option>
+                  <option value="6">Medical Assistant</option>
+                  <option value="15">Police Officer</option>
+                  <option value="17">Bartender</option>
+                  <option value="4">Administrative Assistant</option>
+                </select></p>
+                <p> Occupation Type <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="occupation_type" id="occupation_type">
+                  <option selected value="2">Long Term Contract</option>
+                  <option value="1">Temporal Contract</option>
+                  <option value="4">Season Contract</option>
+                  <option value="5">Eventual Contract</option>
+                </select></p>
+                <p> Company? <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="company" id="company">
+                  <option selected value="0">No</option>
+                  <option value="0">Yes</option>             
+                </select></p>
+                <p> Months in the Job? <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="months_in_job" id="months_in_job">
+                  <option selected value="0">No</option>
+                  <option value="1">Yes</option>
+                </select></p>
+                <p> Have Professional Phone? <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="flag_professional_phone" id="flag_professional_phone">
+                  <option selected value="Y">Yes</option>
+                  <option value="N">No</option>
+                </select></p>
+                    <button type="submit" class="btn btn-primary mb-5" style="width:100%">Submit</button>
+                    <div class="row"></div>
+                </form>
+            </div>
+            <div class="col"></div>
+            
+        </div>
+        
+    </div>    
+  </body>
+</html>
